@@ -20,7 +20,7 @@ public class KilometrageApplication {
     public List<Kilometrage> getAvions() {
         return jdbcTemplate.query(
                 "SELECT * FROM kilometrage",
-                (rs, rowNum) -> new Kilometrage(rs.getInt("idavion"), rs.getDate("daty").toString(), rs.getDouble("debut"), rs.getDouble("fin")));
+                (rs, rowNum) -> new Kilometrage(rs.getString("idavion"), rs.getDate("daty").toString(), rs.getDouble("debut"), rs.getDouble("fin")));
     }
 
     @PostMapping("/" +
