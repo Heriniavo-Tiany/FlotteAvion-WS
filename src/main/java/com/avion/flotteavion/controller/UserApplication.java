@@ -17,7 +17,7 @@ public class UserApplication {
 
     @GetMapping("/users")
     public Object getUser(@RequestParam String email, @RequestParam String pwd) {
-        String query = String.format("SELECT * FROM utilisateur WHERE email = '%s' and pwd = md5cc('%s')::varchar", email, pwd);
+        String query = String.format("SELECT * FROM utilisateur WHERE email = '%s' and pwd = md5('%s')::varchar", email, pwd);
 
         try {
             return jdbcTemplate.query(
