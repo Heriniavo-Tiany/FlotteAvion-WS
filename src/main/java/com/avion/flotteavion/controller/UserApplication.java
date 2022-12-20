@@ -22,7 +22,7 @@ public class UserApplication {
         try {
             return jdbcTemplate.query(
                     query,
-                    (rs, rowNum) -> new User(rs.getInt("id"), rs.getString("name"), rs.getString("email"))
+                    (rs, rowNum) -> new User(rs.getString("id"), rs.getString("name"), rs.getString("email"))
             ).get(0);
         } catch (IndexOutOfBoundsException e) {
             return new Error(404, "Email & Mot de passe non correspondant");
