@@ -20,7 +20,7 @@ public class AvionApplication {
     @CrossOrigin
     @GetMapping("/assurances/{months}")
     public List<Avion> getAssurances(@PathVariable String months) {
-        String query = String.format("SELECT * FROM v_assurance WHERE months = '%s'", months);
+        String query = String.format("SELECT * FROM v_assurance WHERE months = %s", months);
 
         return jdbcTemplate.query(
                 query,
