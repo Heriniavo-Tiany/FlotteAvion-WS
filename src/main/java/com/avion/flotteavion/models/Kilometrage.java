@@ -1,7 +1,7 @@
 package com.avion.flotteavion.models;
 
 public class Kilometrage {
-    int idAvion;
+    String idAvion;
     String date;
     Double debut;
     Double fin;
@@ -9,18 +9,18 @@ public class Kilometrage {
     public Kilometrage() {
     }
 
-    public Kilometrage(int idAvion, String date, Double debut, Double fin) {
+    public Kilometrage(String idAvion, String date, Double debut, Double fin) {
         this.idAvion = idAvion;
         this.date = date;
         this.debut = debut;
         this.fin = fin;
     }
 
-    public int getIdAvion() {
+    public String getIdAvion() {
         return idAvion;
     }
 
-    public void setIdAvion(int idAvion) {
+    public void setIdAvion(String idAvion) {
         this.idAvion = idAvion;
     }
 
